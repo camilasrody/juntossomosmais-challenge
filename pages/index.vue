@@ -69,8 +69,8 @@ import UserDataService from "../services/UserDataService"
       const skip = perPage * page
 
 
-      // const users = await UserDataService.getAll()
-      const users = await UserDataService.getEspecial()
+      const users = await UserDataService.getAll()
+      // const users = await UserDataService.getEspecial()
       
       const currentUsers = users.slice(skip, (skip + perPage))
       const pageCount = Math.ceil(users.length / perPage)

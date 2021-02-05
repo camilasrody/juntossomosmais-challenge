@@ -4,7 +4,7 @@ import * as geolib from 'geolib';
 class UserDataService {
   async getAll(params) {
     
-    const response = await $axios.get('http://juntossomosmais-mock.test/frontend-challenge.json', { params })
+    const response = await $axios.get('/.netlify/functions/users', { params })
     return response.data.results
   }
 
@@ -29,11 +29,11 @@ class UserDataService {
 
   async getEspecial(params) {
     
-    const response = await $axios.get('http://juntossomosmais-mock.test/frontend-challenge.json', { params })
+    const response = await $axios.get('/.netlify/functions/users', { params })
     const users = response.data.results;
 
     return  users.filter(user => {
-      console.log(parseFloat(user.location.coordinates.latitude)+ ","+parseFloat(user.location.coordinates.longitude))
+      // console.log(parseFloat(user.location.coordinates.latitude)+ ","+parseFloat(user.location.coordinates.longitude))
       let isFound = false
 
       if( user.location.coordinates.latitude > -15.411580 && user.location.coordinates.longitude > -46.361899 &&
@@ -56,11 +56,11 @@ class UserDataService {
       // [ -19.766959, -44.428305 ],
       // ])
 
-      if(isFound){
-        console.log('encontradoooooooooooooooooooooooooooooooooooooooooo')
-      }else{
-        console.log('não encontrado no -34.016466,-54.777426 ou -26.155681, -46.603598')
-      }
+      // if(isFound){
+      //   console.log('encontradoooooooooooooooooooooooooooooooooooooooooo')
+      // }else{
+      //   console.log('não encontrado no -34.016466,-54.777426 ou -26.155681, -46.603598')
+      // }
 
       // if(isFound2){
       //   console.log('encontradoooooooooooooooooooooooooooooooooooooooooo')
