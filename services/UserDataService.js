@@ -2,9 +2,9 @@ import $axios from "axios";
 import * as geolib from 'geolib';
 
 class UserDataService {
+
   async getAll(params) {
-    
-    const response = await $axios.get('/.netlify/functions/users', { params })
+    const response = await $axios.get('/api/users', { params })
     return response.data.results
   }
 
@@ -27,9 +27,8 @@ class UserDataService {
       return inside;
   }
 
-  async getEspecial(params) {
-    
-    const response = await $axios.get('/.netlify/functions/users', { params })
+  async getEspecial(params) {  
+    const response = await $axios.get('/api/users', { params })
     const users = response.data.results;
 
     return  users.filter(user => {
