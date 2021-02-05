@@ -1,0 +1,11 @@
+.test {
+  @apply text-gray-700 p-4;
+
+  &_working {
+    @apply text-green-500;
+  }
+
+  & .nested {
+    @apply text-blue-500;
+  }
+}

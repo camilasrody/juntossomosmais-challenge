@@ -1,20 +1,34 @@
 <template>
   <div>
+    <Navegation />
     <Nuxt />
+    <Foot />
   </div>
 </template>
 
+<script>
+import Navegation from '~/components/Navegation.vue'
+
+export default {
+  components: {
+    Navegation
+  },
+
+  asyncData () {
+    return { renderedOn: process.client ? 'client' : 'server' }
+  },
+  data () {
+    return {
+      renderedOn: 0
+    }
+  }
+}
+</script>
+
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
