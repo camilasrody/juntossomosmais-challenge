@@ -10,19 +10,19 @@
     </svg>
     </NuxtLink>
     </div>
-    <div class="pb-10">
-    <div class="container flex flex-col shadow-lg bg-white border-1 borde-gray-500 rounded-md max-w-md">
-    <a class="subtitle font-semibold -mt-64"
+    <div class="pb-10 ">
+    <div class="container flex flex-col shadow-lg bg-white border-1 borde-gray-300 rounded-md max-w-md ">
+    <a class="subtitle capitalize font-semibold -mt-64"
        :href="user.picture.large"
        target="_blank">
       {{ user.name.first }} {{user.name.last}}
     </a>
-    <img class="flex justify-center rounded-full border-2 border-gray-500 h-40 w-40 mb-10"
+    <img class="flex justify-center rounded-full border-4 border-gray-300 h-40 w-40 mb-10"
          :src="user.picture.large"
          :alt="user.name.first"/>
-    <div class="tracking-wide text-justify py-10 px-10 -mb-64">
+    <div class="text-left -py-5 px-10 -mb-64">
       <div class="text-gray-800"><span class="p-2 text-gray-500 font-semibold select-none sm:break-words">Email:</span> {{ user.email }}</div>
-    <div class="text-gray-800"><span class="p-2 text-gray-500 font-semibold select-none sm:break-words">Endereço:</span> {{ user.location.street }}, {{user.location.city }} - {{ user.location.state }} </div>
+    <div class="text-gray-800"><span class="p-2 text-gray-500 font-semibold select-none sm:break-words">Endereço:</span>{{ user.location.street }},{{user.location.city }} - {{ user.location.state }}</div>
       <div class="text-gray-800"><span class="p-2 text-gray-500 font-semibold select-none">CEP:</span> {{ user.location.postcode }}</div>
       <div class="text-gray-800"><span class="p-2 text-gray-500 font-semibold select-none">latitude:</span> {{ user.location.coordinates.latitude }} <br/>
       <span class="p-2 text-gray-500 font-semibold select-none">longitude:</span>{{ user.location.coordinates.longitude }}</div>
