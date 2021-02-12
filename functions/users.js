@@ -36,10 +36,10 @@ const handler = async (event) => {
     const regions = (event.queryStringParameters.regions || '')
     const regionsArray = regions.split(',')
 
-    const response = JSON.parse(fs.readFileSync('mock_users.json'))
-    const users = response.results
-    // const response = await axios.get('')
-    // const users = response.data.results
+    // const response = JSON.parse(fs.readFileSync('mock_users.json'))
+    // const users = response.results
+    const response = await axios.get('https://jsm-challenges.s3.amazonaws.com/frontend-challenge.json')
+    const users = response.data.results
     let someUsers = users
 
     if(email.length > 0){
