@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navegation />
     <Nuxt />
     <Foot />
   </div>
@@ -19,9 +18,10 @@ export default {
   },
   data () {
     return {
-      renderedOn: 0
+      renderedOn: 0,
+      query: "",
     }
-  }
+  },
 }
 </script>
 
